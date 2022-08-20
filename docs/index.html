@@ -57,7 +57,7 @@
                 <p>The unique features of TAT-DQA include:</p>
 
                 <ul>
-                    <li>The documents in TAT-DQA dataset are sampled from <ins>real-world high-quality financial reports</ins> and each document contains both <<ins>tabular and textual</ins> data; </li>
+                    <li>The documents in TAT-DQA dataset are sampled from <ins>real-world high-quality financial reports</ins> and each document contains both <ins>tabular and textual</ins> data; </li>
                     <li>The average number of words of each document in TAT-DQA is around <ins>550</ins>, which is significantly larger than all existing Document VQA datasets. </li>
                     <li>Around <ins>85%</ins> of the documents in the dataset have only one page while <ins>15%</ins> has multiple pages. </li>
                     <li>Similar to TAT-QA, the answer forms are diverse, including <ins>single span</ins>,  <ins>multiple spans</ins> and <ins>free-form</ins> and various numerical reasoning capabilities are usually required, including  <ins>addition (+)</ins>, <ins>subtraction (-)</ins>, <ins>multiplication (x)</ins>, <ins>division (/)</ins>, <ins>counting</ins>, <ins>comparison</ins>, <ins>sorting</ins>, and <ins>their compositions</ins>;</li>
@@ -80,39 +80,46 @@
             <div class="container">
                 <h3>Getting Started</h3>
 
-                Download a copy of the dataset in json format:
+                Download the TAT-DQA Dataset including PDF documents and the QA pairs in json format from <a href="https://drive.google.com/drive/folders/1SGpZyRWqycMd_dZim1ygvWhl5KdJYDR2" target="_blank">Google Drive</a>
 
-                <ul>
-                        <li>
-                            <a href="https://github.com/NExTplusplus/tat-qa/blob/master/dataset_raw/tatqa_dataset_train.json" target="_blank">Training set</a>
-                            <small>[MD5: cc5026bdfe51bb47d63e6c3d31714951]</small>
-                        </li>
-                        <li>
-                            <a href="https://github.com/NExTplusplus/tat-qa/blob/master/dataset_raw/tatqa_dataset_dev.json" target="_blank">Dev set</a>
-                            <small>[MD5: 0b24a68b35fd814df5ad12cba548a8ea]</small>
-                        </li>
-                        <li>
-                            <a href="https://github.com/NExTplusplus/tat-qa/blob/master/dataset_raw/tatqa_dataset_test.json" target="_blank">Test set</a>
-                            <small>[MD5: c6ccc2beecaed12fc070c3df102ca019]</small>
-                        </li>
-                </ul>
+               
 
 <pre>
-  "questions": [                                                         <em class="comment"># The questions associated to the hybrid context</em>
-    {
-      "uid": "eb787966-fa02-401f-bfaf-ccabf3828b23",                     <em class="comment"># The unique id of a question</em>
-      "order": 2,                                                        <em class="comment"># The order of the question in all questions, starting from 1</em>
-      "question": "What is the change in Other in 2019 from 2018?",      <em class="comment"># The question itself</em>
-      "answer": -12.6,                                                   <em class="comment"># The ground-truth answer</em>
-      "derivation": "44.1 - 56.7",                                       <em class="comment"># The derivation that can be executed to arrive at the ground-truth answer</em>
-      "answer_type": "arithmetic",                                       <em class="comment"># The answer type including `span`, `spans`, `arithmetic` and `counting`.</em>
-      "answer_from": "table-text",                                       <em class="comment"># The source of the answer including `table`, `table` and `table-text`</em>
-      "rel_paragraphs": [                                                <em class="comment"># The orders of the paragraphs that are relied to infer the answer if any.</em>
-        "2"
-      ],
-      "req_comparison": false,                                           <em class="comment"># A flag indicating if `comparison/sorting` is needed to answer the question whose answer is a single span or multiple spans</em>
-      "scale": "million"                                                 <em class="comment"># The scale of the answer including `None`, `thousand`, `million`, `billion` and `percent`</em>
-    }
+{ 
+  "doc": {
+    "uid": "11ba155b7577c83fe5f3c4f766039e93",                                      <em class="comment"># The unique id of the document, {uid}.pdf and {uid}.json are the given PDF document and the OCR result of the PDF </em>
+    "num_of_page" : 1,                                                              <em class="comment"># The number of pages this document has, e.g. 1,2,3  </em>
+    "source": "navios-maritime-holdings-inc_2019.pdf"                               <em class="comment"># The financial statement that this doc comes from </em>
+  },                   
+  "questions": [                                                                    <em class="comment"># The questions associated to the given document </em>
+  {                   
+    "uid": "9dfd4a8d0b9e91c2ab5ab4a8745226c6",                                      <em class="comment"># The unique id of a question</em>
+    "order": 6,                                                                     <em class="comment"># The order of the question in all questions, starting from 1</em>
+    "question": "What was the change in Impairment losses between 2017 and 2018?",  <em class="comment"># The question itself</em>
+    "answer": 150092,                                                               <em class="comment"># The ground-truth answer</em>
+    "derivation": "200,657-50,565",                                                 <em class="comment"># The derivation that can be executed to arrive at the ground-truth answer</em>
+    "answer_type": "arithmetic",                                                    <em class="comment"># The answer type including `span`, `spans`, `arithmetic` and `counting`.</em>
+    "scale": "thousand",                                                            <em class="comment"># The scale of the answer including `None`, `thousand`, `million`, `billion` and `percent`</em>
+    "req_comparison": false,                                                        <em class="comment"># A flag indicating if `comparison/sorting` is needed to answer the question whose answer is a single span or multiple spans</em>
+    "facts": [                                                                      <em class="comment">#[Optional] The facts or evidencies used to infer the final answers, which are generated heuristically  </em>
+      "200,657",                     
+      "50,565"                     
+    ],                     
+    "block_mapping": [                                                              <em class="comment"># The facts' positions in the OCR result of the given document. </em>
+      {
+        "69352448-14ad-4854-87a9-3ac44358a660": [
+          26,
+          32
+        ]
+      },
+      {
+        "69352448-14ad-4854-87a9-3ac44358a660": [
+          18,
+          25
+        ]
+      }
+    ]
+    ...                                                 
   ]
 }
 </pre>
@@ -160,7 +167,7 @@
                             <td>50.7</td>
                             <td>10 Aug 2022</td>
                             <td><a href="https://arxiv.org/pdf/2207.11871.pdf" target="_blank">Paper</a> </td>
-                            <td>10 Aug 2022</td>
+                            <td><a href="https://github.com/NExTplusplus/TAT-DQA" target="_blank">Codes</a> </td>
                         </tr>
                         </tbody>
                     </table>
@@ -227,8 +234,6 @@
                     For more information, please contact:
                     <ul>
                         <li>Fengbin ZHU <a href="mailto:fengbinzhu@u.nus.edu">fengbinzhu@u.nus.edu</a></li>
-                        <li>Wenqiang LEI <a href="mailto:wenqianglei@gmail.com">wenqianglei@gmail.com</a></li>
-                        <li>Fuli FENG <a href="mailto:fulifeng93@gmail.com">fulifeng93@gmail.com</a></li>
                     </ul>
                 </p>
                 <p>
