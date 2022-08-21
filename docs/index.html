@@ -80,15 +80,77 @@
             <div class="container">
                 <h3>Getting Started</h3>
 
-                Download the TAT-DQA Dataset including PDF documents and the QA pairs in json format from <a href="https://drive.google.com/drive/folders/1SGpZyRWqycMd_dZim1ygvWhl5KdJYDR2" target="_blank">Google Drive</a>
+                Download the TAT-DQA Dataset from <a href="https://drive.google.com/drive/folders/1SGpZyRWqycMd_dZim1ygvWhl5KdJYDR2" target="_blank">Google Drive</a>. The data have three parts: the original documents in PDF format, the converted content from the PDF in JSON format and the QA pairs in JSON format. Following are the detailed explainations about the data. 
 
-               
 
+<br>
+<li><ins>PDF documents</ins>:  which is obtained by filtering the document pages corresponding to the QA pairs from the raw financial reports, e.g.,<i> 11ba155b7577c83fe5f3c4f766039e93.pdf</i>. A PDF document in TAT-DQA may contain at most three pages. </li>
+
+<br>
+<li><ins>Converted content from PDF in JSON</ins> : obtained by converting the text with a bounding box using a PDF Reader for the readable PDF files or a commercial OCR engine for the images e.g., <i>11ba155b7577c83fe5f3c4f766039e93.json</i>. </li>
+
+<pre>
+{
+  "pages": [                                                                  <em class="comment"># The document content are stored by page, each page will be one element in this array </em>
+    {
+      "bbox": [                                                               <em class="comment"># The dimension of this document page, [x1, y1, x2, y2]. (x1, y1) is the top left of the page while (x2, y2) is the bottom right  </em>
+        0,
+        0,
+        1239,
+        1754
+      ],
+      "blocks": [                                                             <em class="comment"># The document content are stored by blocks for each page </em>
+        {
+          "bbox": [
+            34,
+            50,
+            174,
+            71
+          ],
+          "uuid": "8f1e47dc-af67-485d-b269-057f06e8714c",                     <em class="comment"># The unique ID of the block  </em>
+          "text": "Table of Contents",                                        <em class="comment"># The text content of the block  </em>
+          "words": {                                                          <em class="comment"># The word list of the content for this block  </em>
+            "word_list": [
+              "Table",
+              "of",
+              "Contents"
+            ],
+            "bbox_list": [                                                    <em class="comment"># The corresponding bounding box of each word in the word list  </em>
+              [
+                34,
+                50,
+                75,
+                71
+              ],
+              [
+                84,
+                50,
+                100,
+                71
+              ],
+              [
+                108,
+                50,
+                174,
+                71
+              ]
+            ]
+          },
+          "order": 1                                                        <em class="comment"># The order of the block in this page, starting from 1 </em>
+        },
+        ...
+    ]
+   }
+  ]
+ }
+</pre>
+
+<li> <ins>QA Pairs</ins>: The QA pairs associated to the given document. </li>
 <pre>
 { 
   "doc": {
     "uid": "11ba155b7577c83fe5f3c4f766039e93",                                      <em class="comment"># The unique id of the document, {uid}.pdf and {uid}.json are the given PDF document and the OCR result of the PDF </em>
-    "num_of_page" : 1,                                                              <em class="comment"># The number of pages this document has, e.g. 1,2,3  </em>
+    "page" : 1,                                                                     <em class="comment"># The starting page no. of the document that is relevant to the QA pairs</em>
     "source": "navios-maritime-holdings-inc_2019.pdf"                               <em class="comment"># The financial statement that this doc comes from </em>
   },                   
   "questions": [                                                                    <em class="comment"># The questions associated to the given document </em>
