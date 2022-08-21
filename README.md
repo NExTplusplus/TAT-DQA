@@ -4,9 +4,9 @@ TAT-DQA: Towards Complex Document Understanding By Discrete Reasoning
 **TAT-DQA** is a large-scale Document VQA dataset, which is constructed by extending the [TAT-QA](https://github.com/NExTplusplus/TAT-QA). It aims to stimulate progress of QA research over more complex and realistic visually-rich documents with rich tabular and textual content, especially those requiring numerical reasoning.
 
 
-You can download our TAT-DQA dataset via [TAT-DQA dataset](https://drive.google.com/drive/folders/1SGpZyRWqycMd_dZim1ygvWhl5KdJYDR2).
-                
-For more information, please refer to our [TAT-QA website](https://nextplusplus.github.io/TAT-DQA/) or read our ACM MM 2022 paper [PDF](https://arxiv.org/pdf/2207.11871.pdf).
+You can download our TAT-DQA dataset via [TAT-DQA Dataset](https://drive.google.com/drive/folders/1SGpZyRWqycMd_dZim1ygvWhl5KdJYDR2).
+               
+For more information, please refer to our [TAT-DQA Website](https://nextplusplus.github.io/TAT-DQA/) or read our ACM MM 2022 paper [PDF](https://arxiv.org/pdf/2207.11871.pdf).
 
 ## MHST Model
 
