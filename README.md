@@ -46,7 +46,7 @@ Note: The training process may take around 2 days using a single 32GB v100.
 
 __Please kindly cite our work if you use our dataset or codes, thank you.__
 ```bash
-@inproceedings{zhu-etal-2021-tat,
+@inproceedings{zhu2021tatqa,
     title = "{TAT}-{QA}: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance",
     author = "Zhu, Fengbin  and
       Lei, Wenqiang  and
@@ -67,13 +67,19 @@ __Please kindly cite our work if you use our dataset or codes, thank you.__
 }
 
 
-@misc{zhu2022towards,
-  doi = {10.48550/ARXIV.2207.11871},
-  url = {https://arxiv.org/abs/2207.11871},
-  author = {Zhu, Fengbin and Lei, Wenqiang and Feng, Fuli and Wang, Chao and Zhang, Haozhou and Chua, Tat-Seng},
-  title = {Towards Complex Document Understanding By Discrete Reasoning},
-  publisher = {arXiv},
-  year = {2022}
+@inproceedings{zhu2022tatdqa,
+    author = {Zhu, Fengbin and Lei, Wenqiang and Feng, Fuli and Wang, Chao and Zhang, Haozhou and Chua, Tat-Seng},
+    title = {Towards Complex Document Understanding By Discrete Reasoning},
+    year = {2022},
+    isbn = {9781450392037},
+    publisher = {Association for Computing Machinery},
+    url = {https://doi.org/10.1145/3503161.3548422},
+    doi = {10.1145/3503161.3548422},
+    pages = {4857–4866},
+    numpages = {10},
+    keywords = {visually-rich document understanding, discrete reasoning, question answering},
+    location = {Lisboa, Portugal},
+    series = {MM '22}
 }
 ```
 
