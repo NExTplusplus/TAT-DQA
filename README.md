@@ -8,9 +8,13 @@ You can download our TAT-DQA dataset via [TAT-DQA Dataset](https://drive.google.
                
 For more information, please refer to our [TAT-DQA Website](https://nextplusplus.github.io/TAT-DQA/) or read our ACM MM 2022 paper [PDF](https://arxiv.org/pdf/2207.11871.pdf).
 
-### Code 
 
-You are welcome to use the [Doc2SoarGraph repo](https://github.com/fengbinzhu/Doc2SoarGraph) to explore the dataset and start your research
+
+### Updates 
+
+**${\color{red}Jan 2024}$**: We release the ground truth for the TAT-DQA test set [TAT-DQA Dataset](https://drive.google.com/drive/folders/1SGpZyRWqycMd_dZim1ygvWhl5KdJYDR2), to facilitate future research on this task!
+
+**${\color{red}May 2023}$**: Source Code released! You are welcome to use the [Doc2SoarGraph repo](https://github.com/fengbinzhu/Doc2SoarGraph) to explore the TAT-DQA dataset and start your research!
 
 ### Citation
 
@@ -35,7 +39,11 @@ __Please kindly cite our work if you use our dataset or codes, thank you.__
 }
 ```
 
-### Any Question?
+### License
+
+The TAT-DQA dataset is under the license of [Creative Commons (CC BY) Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
+
+### Any Questions?
 
 For any issues please create an issue [here](https://github.com/nextplusplus/TAT-DQA/issues) or kindly email us at:
 Fengbin Zhu [zhfengbin@gmail.com](mailto:zhfengbin@gmail.com), thank you.
