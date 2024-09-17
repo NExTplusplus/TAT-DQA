@@ -29,13 +29,26 @@ __Please kindly cite our work if you use our dataset or codes, thank you.__
   year={2022}
 }
 
-@misc{zhu2023doc2soargraph,
-      title={Doc2SoarGraph: Discrete Reasoning over Visually-Rich Table-Text Documents with Semantic-Oriented Hierarchical Graphs}, 
-      author={Fengbin Zhu and Chao Wang and Fuli Feng and Zifeng Ren and Moxin Li and Tat-Seng Chua},
-      year={2023},
-      eprint={2305.01938},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{zhu2024doc2soargraph,
+    title = "{D}oc2{S}oar{G}raph: Discrete Reasoning over Visually-Rich Table-Text Documents via Semantic-Oriented Hierarchical Graphs",
+    author = "Zhu, Fengbin  and
+      Wang, Chao  and
+      Feng, Fuli  and
+      Ren, Zifeng  and
+      Li, Moxin  and
+      Chua, Tat-Seng",
+    editor = "Calzolari, Nicoletta  and
+      Kan, Min-Yen  and
+      Hoste, Veronique  and
+      Lenci, Alessandro  and
+      Sakti, Sakriani  and
+      Xue, Nianwen",
+    booktitle = "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+    year = "2024",
+    address = "Torino, Italia",
+    publisher = "ELRA and ICCL",
+    url = "https://aclanthology.org/2024.lrec-main.456",
+    pages = "5119--5131"
 }
 ```
 
